@@ -299,5 +299,5 @@ def recomendacion(titulo: str):
     Parámetros:
     título (str): El título de la película a la que se desea obtener recomendaciones."""
 
-    recommended_movies = get_recommendations(titulo, movies_df, cosine_sim)
+    recommended_movies = get_recommendations(titulo, modelo_df, cosine_sim)
     return recommended_movies
