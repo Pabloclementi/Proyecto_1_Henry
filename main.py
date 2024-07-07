@@ -2,9 +2,9 @@ from fastapi import FastAPI, HTTPException
 import pandas as pd
 #import pyarrow
 import numpy as np
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
-from sklearn.decomposition import TruncatedSVD
+# from sklearn.feature_extraction.text import TfidfVectorizer
+# from sklearn.metrics.pairwise import cosine_similarity
+# from sklearn.decomposition import TruncatedSVD
 # import string 
 # from sklearn.metrics import mean_squared_error
 # from sklearn.model_selection import train_test_split
@@ -16,22 +16,22 @@ from typing import List
 # nlt.download('stopwords')
 # nlt.download('punkt')
 #Cargamos los datasets en variables con el metodo de pandas pd.read_csv()
-movies_df = pd.read_parquet('data/testfinal.parquet') 
+movies_df = pd.read_csv('data/Movies_Limpio.csv') 
 # df_recomendaciones = pd.read_csv('data/df_recomendacion_final.parquet')
 # stopwords_english = set(stopwords.words('english'))
 
 # Combinar las stop words en un solo conjunto
 
-# Preprocesamiento y vectorización utilizando TF-IDF con stop words en inglés y español
-vectorizer = TfidfVectorizer(stop_words=('english'), max_features=5000)  # Limitando características para reducir memoria
-tfidf_matrix = vectorizer.fit_transform(movies_df['combined_features'])
+# # Preprocesamiento y vectorización utilizando TF-IDF con stop words en inglés y español
+# vectorizer = TfidfVectorizer(stop_words=('english'), max_features=5000)  # Limitando características para reducir memoria
+# tfidf_matrix = vectorizer.fit_transform(movies_df['combined_features'])
 
-# Reducción de dimensionalidad con TruncatedSVD (opcional pero recomendado para grandes datasets)
-svd = TruncatedSVD(n_components=500)  # Ajusta n_components según sea necesario
-tfidf_matrix_reduced = svd.fit_transform(tfidf_matrix)
+# # Reducción de dimensionalidad con TruncatedSVD (opcional pero recomendado para grandes datasets)
+# svd = TruncatedSVD(n_components=500)  # Ajusta n_components según sea necesario
+# tfidf_matrix_reduced = svd.fit_transform(tfidf_matrix)
 
-# Calcular la similitud del coseno
-cosine_sim = cosine_similarity(tfidf_matrix_reduced, tfidf_matrix_reduced)
+# # Calcular la similitud del coseno
+# cosine_sim = cosine_similarity(tfidf_matrix_reduced, tfidf_matrix_reduced)
 
 
 
