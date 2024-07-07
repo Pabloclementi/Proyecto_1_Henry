@@ -11,16 +11,15 @@ from typing import List
 # nlt.download('stopwords')
 #Cargamos los datasets en variables con el metodo de pandas pd.read_csv()
 movies_df = pd.read_csv('data/moviesfinal.csv')
-modelo_df = pd.read_csv('data/modelo_final.csv')
+modelo_df = pd.read_csv('data/modelo_final_5000.csv')
 # Vectorización utilizando TF-IDF con stop words en inglés y español
-vectorizer = TfidfVectorizer(stop_words=None, max_features=5000)
+vectorizer = TfidfVectorizer(stop_words=None)
 tfidf_matrix = vectorizer.fit_transform(modelo_df['combined_features'])
 
 # Aplicar TruncatedSVD para reducir la dimensionalidad
-svd = TruncatedSVD(n_components=100)
-tfidf_matrix_svd = svd.fit_transform(tfidf_matrix)
-cosine_sim = cosine_similarity(tfidf_matrix_svd, tfidf_matrix_svd) 
-
+# svd = TruncatedSVD(n_components=100)
+# tfidf_matrix_svd = svd.fit_transform(tfidf_matrix)
+cosine_sim = cosine_similarity(tfidf_matrix, tfidf_matrix) 
 
 app= FastAPI() 
 # Para ejecutar la aplicación, usa el siguiente comando en la terminal:
@@ -268,7 +267,7 @@ def get_director(director_name: str):
 
 
 # Definir la función get_recommendations
-def get_recommendations(title, df, cosine_sim):
+def get_recommendations(title, df= modelo_df, cosine_sim=cosine_sim):
     try:
         # Obtener el índice de la película que coincide con el título
         idx = df[df['title'].str.lower() == title.lower()].index[0]
