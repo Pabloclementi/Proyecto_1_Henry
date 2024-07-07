@@ -3,34 +3,28 @@ import pandas as pd
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-from sklearn.decomposition import TruncatedSVD
-# import string 
 import string 
-# import nltk as nlt
 from typing import List
-# nlt.download('stopwords')
+
 #Cargamos los datasets en variables con el metodo de pandas pd.read_csv()
 movies_df = pd.read_csv('data/moviesfinal.csv')
 modelo_df = pd.read_csv('data/top_5000_movies.csv')
-# Vectorización utilizando TF-IDF con stop words en inglés y español
+
+# Vectorización utilizando TF-IDF con stop words en None , previamente hecho en el EDA
 vectorizer = TfidfVectorizer(stop_words=None)
 tfidf_matrix = vectorizer.fit_transform(modelo_df['combined_features'])
 
-# Aplicar TruncatedSVD para reducir la dimensionalidad
-# svd = TruncatedSVD(n_components=100)
-# tfidf_matrix_svd = svd.fit_transform(tfidf_matrix)
+#Obtenemos la similitud del coseno
 cosine_sim = cosine_similarity(tfidf_matrix, tfidf_matrix) 
 
+#Instanciamos la api
 app= FastAPI() 
-# Para ejecutar la aplicación, usa el siguiente comando en la terminal:
-# uvicorn main:app --reload
 
-#http://127.0.0.1:8000/
 @app.get("/")
 def read_root():
-    return {"message": "Welcome to the Movie API"}
+    return {"message": "Bienvenidos a la API , de mi primer proyecto"}
 
-#Mapeo de meses en español a numeros para utulizar funcion day of the week. 
+
 
 ## Se ingresa un mes en idioma Español. Debe devolver la cantidad de películas que fueron estrenadas en el mes consultado en la totalidad del dataset.
 @app.get("/meses/{mes}")
@@ -44,6 +38,7 @@ def cantidad_filmaciones_mes(mes: str):
     Returns:
     str: Una cadena con la cantidad de películas estrenadas en el Mes especificado.
     """
+    #Mapeo de meses en español a numeros para utulizar funcion day of the week de pandas
     meses = {
     'enero': 1,
     'febrero': 2,
@@ -80,12 +75,7 @@ def cantidad_filmaciones_mes(mes: str):
     return {"mes": mes, "cantidad_peliculas": cantidad_peliculas} 
 
 
-
-
 # Creamos funcio en donde Se ingresa un día en idioma Español. Debe devolver la cantidad de películas que fueron estrenadas en día consultado en la totalidad del dataset.
- 
-# Diccionario para mapear los días de la semana en español a números de día de la semana (0=Lunes, 6=Domingo)
-
 
 @app.get("/dias_semana/{dia_espanol}")
 def cantidad_peliculas_por_dia(dia_espanol: str):
@@ -99,6 +89,7 @@ def cantidad_peliculas_por_dia(dia_espanol: str):
     Returns:
     str: Una cadena con la cantidad de películas estrenadas en el día especificado.
     """
+    # Diccionario para mapear los días de la semana en español a números de día de la semana (0=Lunes, 6=Domingo)
     dias_semana = {
         'lunes': 0,
         'martes': 1,
@@ -112,7 +103,6 @@ def cantidad_peliculas_por_dia(dia_espanol: str):
     }
  # Convertir la columna de fechas a datetime si no lo está
     movies_df['release_date'] = pd.to_datetime(movies_df['release_date'], errors='coerce')
-    
     
 # Obtener el número de día de la semana correspondiente al día en español
     dia_numero = dias_semana.get(dia_espanol.lower())
@@ -160,7 +150,6 @@ def titulo(titulo: str):
 # Se ingresa el título de una filmación esperando como respuesta el título, la cantidad de votos y el valor promedio de las votaciones. La misma variable deberá de contar con al menos 2000 valoraciones, caso contrario, debemos contar con un mensaje avisando que no cumple esta condición y que por ende, no se devuelve ningun valor.
 #Ejemplo de retorno: La película `X` fue estrenada en el año `X`. La misma cuenta con un total de `X` valoraciones, con un promedio de `X`
 
-
 @app.get("/votos/{titulo}")
 def votos_titulo(titulo: str):
     """Se ingresa el título de una filmación esperando como respuesta el título, 
@@ -190,7 +179,7 @@ def get_actor(actor_name: str):
     Parametros:
     actor_name (str): El nombre del actor.
     """
-    # Convertir los nombres de los actores y directores a minúsculas en el DataFrame y rellenar NaN con cadenas vacías
+    # Convertir los nombres de los actores y directores a minúsculas en el DataFrame y rellenar NaN
     movies_df['actor'] = movies_df['actor'].str.lower().fillna('sin dato')
     movies_df['director'] = movies_df['director'].str.lower().fillna('sin dato')
 
@@ -293,7 +282,7 @@ def get_recommendations(title, df= modelo_df, cosine_sim=cosine_sim):
 @app.get("/recomendacion/{titulo}", response_model=List[str])
 def recomendacion(titulo: str):
     """
-    Devuelve un listado de cinco películas similares al título ingresado.
+    Devuelve un listado de cinco películas para recomendar, en base al titulo,genero, y descripcion
     Sobre las 5000 mil peliculas con mejor promedio de votos.
 
     Parámetros:
