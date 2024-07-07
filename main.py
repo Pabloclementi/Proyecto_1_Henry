@@ -11,7 +11,7 @@ from typing import List
 # nlt.download('stopwords')
 #Cargamos los datasets en variables con el metodo de pandas pd.read_csv()
 movies_df = pd.read_csv('data/moviesfinal.csv')
-modelo_df = pd.read_csv('data/modelo_final_5000.csv')
+modelo_df = pd.read_csv('data/top_5000_movies.csv')
 # Vectorización utilizando TF-IDF con stop words en inglés y español
 vectorizer = TfidfVectorizer(stop_words=None)
 tfidf_matrix = vectorizer.fit_transform(modelo_df['combined_features'])
@@ -292,5 +292,12 @@ def get_recommendations(title, df= modelo_df, cosine_sim=cosine_sim):
 
 @app.get("/recomendacion/{titulo}", response_model=List[str])
 def recomendacion(titulo: str):
+    """
+    Devuelve un listado de cinco películas similares al título ingresado.
+    Sobre las 5000 mil peliculas con mejor promedio de votos.
+
+    Parámetros:
+    título (str): El título de la película a la que se desea obtener recomendaciones."""
+
     recommended_movies = get_recommendations(titulo, movies_df, cosine_sim)
     return recommended_movies
