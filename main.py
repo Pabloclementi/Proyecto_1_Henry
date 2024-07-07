@@ -6,14 +6,15 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.decomposition import TruncatedSVD
 # import string 
 import string 
-import nltk as nlt
+# import nltk as nlt
 from typing import List
 # nlt.download('stopwords')
 #Cargamos los datasets en variables con el metodo de pandas pd.read_csv()
-movies_df = pd.read_csv('data/testfinal.csv')
+movies_df = pd.read_csv('data/moviesfinal.csv')
+modelo_df = pd.read_csv('data/modelo_final.csv')
 # Vectorización utilizando TF-IDF con stop words en inglés y español
-vectorizer = TfidfVectorizer(stop_words=('english'), max_features=5000)
-tfidf_matrix = vectorizer.fit_transform(movies_df['combined_features'])
+vectorizer = TfidfVectorizer(stop_words=None, max_features=5000)
+tfidf_matrix = vectorizer.fit_transform(modelo_df['combined_features'])
 
 # Aplicar TruncatedSVD para reducir la dimensionalidad
 svd = TruncatedSVD(n_components=100)
@@ -262,50 +263,6 @@ def get_director(director_name: str):
     
     return mensajefinal
 
-################################################################################
-# stopwords_english = set(stopwords.words('english'))
-# # stopwords_spanish = set(stopwords.words('spanish'))
-
-# # # Combinar las stop words en un solo conjunto
-# # combinacion_stop_words = list(set(stopwords_english).union(set(stopwords_spanish)))
-
-
-
-# # Vectorización utilizando TF-IDF con stop words en inglés y español
-# vectorizer = TfidfVectorizer(stop_words=stopwords_english)
-
-
-# #Calcular la similitud del coseno
-# cosine_sim = 
-
-# # Definir tu función get_recommendations
-# def get_recommendations(title, df, cosine_sim):
-#     try:
-#         # Obtener el índice de la película que coincide con el título
-#         idx = df[df['title'].str.lower() == title.lower()].index[0]
-
-#         # Obtener los scores de similitud de todas las películas con esa película
-#         sim_scores = list(enumerate(cosine_sim[idx]))
-
-#         # Ordenar las películas según la puntuación de similitud
-#         sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
-
-#         # Obtener las 5 películas más similares (excepto la misma película)
-#         sim_scores = sim_scores[1:6]
-
-#         # Obtener los índices de las películas más similares
-#         movie_indices = [i[0] for i in sim_scores]
-
-#         # Retornar los títulos de las películas más similares
-#         return df['title'].iloc[movie_indices].tolist()
-#     except IndexError:
-#         raise HTTPException(status_code=404, detail=f"No se encontraron películas similares para '{title}'. Asegúrate de haber puesto correctamente el título.")
-
-# ## Definir el endpoint en FastAPI
-# @app.get("/recomendacion/{titulo}", response_model=List[str])
-# async def recomendacion(titulo: str):
-#     recommended_movies = get_recommendations(titulo, movies_df, cosine_sim)
-#     return recommended_movies
 
 ################################################################
 
@@ -338,6 +295,3 @@ def get_recommendations(title, df, cosine_sim):
 def recomendacion(titulo: str):
     recommended_movies = get_recommendations(titulo, movies_df, cosine_sim)
     return recommended_movies
-
-ejemplo_recomendacion = recomendacion('toy story')
-print(ejemplo_recomendacion)
