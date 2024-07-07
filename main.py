@@ -9,7 +9,7 @@ from sklearn.decomposition import TruncatedSVD
 # from sklearn.metrics import mean_squared_error
 # from sklearn.model_selection import train_test_split
 import string 
-# import nltk as nlt
+import nltk as nlt
 from nltk.corpus import stopwords
 # from nltk.tokenize import word_tokenize
 from typing import List 
