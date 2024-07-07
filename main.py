@@ -13,7 +13,7 @@ import nltk as nlt
 from nltk.corpus import stopwords
 # from nltk.tokenize import word_tokenize
 from typing import List 
-# nlt.download('stopwords')
+nlt.download('stopwords')
 # nlt.download('punkt')
 #Cargamos los datasets en variables con el metodo de pandas pd.read_csv()
 movies_df = pd.read_parquet('data/testfinal.parquet') 
