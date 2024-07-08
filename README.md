@@ -104,7 +104,7 @@ _Herramienta utilizadas_
 
 En este proyecto, se trabajó con datasets en archivos CSV, los cuales fueron sometidos a un proceso de ETL (Extracción, Transformación y Carga) y un Análisis Exploratorio de Datos (EDA). Se siguieron todas las consignas solicitadas durante el desarrollo del proyecto, asegurando un flujo de trabajo organizado y coherente.
 
-Se creó una API utilizando FastAPI y se realizó el deployment en Render, facilitando el acceso y la interacción con el sistema de recomendación. El modelo de recomendaciones fue entrenado y ha demostrado funcionar correctamente.
+Se creó una API utilizando FastAPI y se realizó el deployment en Render, facilitando el acceso y la interacción con el sistema de recomendación. El modelo de recomendaciones fue entrenado utilizando la similitud del coseno  y ha demostrado funcionar correctamente.
 
 Para ser un MVP (Producto Mínimo Viable), se ha alcanzado un buen resultado, estableciendo una base sólida que, con más experiencia y tiempo, puede ser optimizada y mejorada significativamente.
 
