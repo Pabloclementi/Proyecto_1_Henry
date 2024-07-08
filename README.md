@@ -40,15 +40,37 @@ Una vez descargada, coloca los archivos dentro de la carpeta data
 
 _Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo academico y pruebas._
 
- 1.	Clona este repositorio:
-    `	git clone https://github.com/Pabloclementi/Proyecto_1_Henry.git		` 
-    
- 2. Crea y activa un entorno virtual (opcional pero recomendado):
-    `	python -m venv env	`
-    `	source env/bin/activate	`  # En Windows usa `	env\Scripts\activate	`
-    
-3. Instala las dependencias necesarias:
-	 `	pip install -r requirements.txt	`
+   1.	Clona este repositorio:
+   ```
+	git clone https://github.com/Pabloclementi/Proyecto_1_Henry.git
+
+	```
+
+    2. Crea y activa un entorno virtual (opcional pero recomendado):
+
+   ```
+	python -m venv env
+
+	```
+
+   #En mac 
+
+	```
+	source env/bin/activate
+								
+	```		
+	#En Windows usa 
+   
+	```
+	myenv\Scripts\activate
+
+	```
+    3. Instala las dependencias necesarias:
+	```python
+    `pip install -r requirements.txt`
+									
+	```
+	
 
 # Herramientas y Tecnologías Utilizadas
 
