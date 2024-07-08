@@ -228,8 +228,8 @@ def get_director(director_name: str):
     if director_movies.empty:
         raise HTTPException(status_code=404, detail=f"Director '{director_name}' no encontrado en el dataset")
     
-    # Calcular el éxito del director sumando los retornos de todas las películas
-    total_return = director_movies['return'].sum()
+    # Calcular el éxito del director promediando los retornos de todas las películas
+    total_return = director_movies['return'].mean()
     
     # Preparar los detalles de cada película del director
     movies_detalles = []
