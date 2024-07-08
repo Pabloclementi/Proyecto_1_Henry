@@ -47,27 +47,14 @@ Estas instrucciones te permitirán obtener una copia del proyecto en funcionamie
 
 2. Crea y activa un entorno virtual (opcional pero recomendado):
 
-   ```sh
-	python -m venv env
+   ```python -m venv env
    ```
 
-En mac 
 
-	```sh  
-	source env/bin/activate
-	```		   
-   
-En Windows usa 
-   
-	```sh
-	myenv\Scripts\activate
+3.	Instala las dependencias necesarias::
+   ```python
+	pip install -r requirements.txt
    ```
-3. Instala las dependencias necesarias:
-
-	```python
-   pip install -r requirements.txt						
-	```
-
 
 
 # Herramientas y Tecnologías Utilizadas
