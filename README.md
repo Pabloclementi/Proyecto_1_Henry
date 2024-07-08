@@ -43,32 +43,29 @@ _Estas instrucciones te permitirán obtener una copia del proyecto en funcionami
    1.	Clona este repositorio:
    ```
 	git clone https://github.com/Pabloclementi/Proyecto_1_Henry.git
+   ```
 
-	```
-
-    2. Crea y activa un entorno virtual (opcional pero recomendado):
+   2. Crea y activa un entorno virtual (opcional pero recomendado):
 
    ```
 	python -m venv env
-
-	```
+   ```
 
    #En mac 
 
 	```
 	source env/bin/activate
-								
 	```		
+
 	#En Windows usa 
    
 	```
 	myenv\Scripts\activate
-
-	```
-    3. Instala las dependencias necesarias:
+   ```
+   3. Instala las dependencias necesarias:
+   
 	```python
-    `pip install -r requirements.txt`
-									
+    `pip install -r requirements.txt`							
 	```
 	
 
