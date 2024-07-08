@@ -1,8 +1,8 @@
-# Proyecto 1 - Henry
+# Proyecto 1 - (MVP) Modelo de recomendacion de peliculas. 
 
 ## Descripción
 
-Este es mi primer proyecto para el Bootcamp de Data Scientist en SoyHenry. El objetivo del proyecto es crear un (MVP) modelo de recomendación de películas utilizando diversos análisis y técnicas de machine learning.
+El objetivo del proyecto es crear un (MVP) modelo de recomendación de películas utilizando diversos análisis y técnicas de machine learning.
 
 ## Contenido del Proyecto
 
@@ -15,10 +15,20 @@ En el archivo EDA.html , en el directorio data se puede ver un paneo general del
 
 ## Estructura del Repositorio
 
-•	data/: Contiene los archivos de datos utilizados en el proyecto.
-•	notebooks/: Notebooks de Jupyter utilizados para el análisis y desarrollo del proyecto.
-•	main.py: Código principal del modelo.
-•	README.md: Este archivo, con la descripción del proyecto.
+:file_folder: **data/** - Contiene los archivos de datos utilizados en el proyecto.
+
+:file_folder: **notebooks/** - Notebooks de Jupyter utilizados para el análisis y desarrollo del proyecto.
+
+
+main.py:  Código principal del modelo.
+
+
+README.md:  Este archivo, con la descripción del proyecto. 
+
+
+
+
+
 ### Datos
 
 La carpeta `data_original` no está incluida en este repositorio debido a su tamaño. Puedes descargarla desde el siguiente enlace:
@@ -59,7 +69,7 @@ _Estas instrucciones te permitirán obtener una copia del proyecto en funcionami
 ## Ejecutando las pruebas ⚙️ 
 
 [APP_Proyecto1](https://proyecto-1-henry-79jk.onrender.com/docs)
-
+[VideoTuorial](link del video)
 
 ## Construido con 🛠️
 
