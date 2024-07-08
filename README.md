@@ -19,11 +19,10 @@ En el archivo EDA.html , en el directorio data se puede ver un paneo general del
 
 :file_folder: **notebooks/** - Notebooks de Jupyter utilizados para el análisis y desarrollo del proyecto.
 
+:snake: **main.py** - Codigo principal principal del proyecto. 
 
-main.py:  Código principal del modelo.
+:page_facing_up: **README.md** - Este archivo de documentación principal del proyecto.
 
-
-README.md:  Este archivo, con la descripción del proyecto. 
 
 
 
