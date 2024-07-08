@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Este es mi primer proyecto para el Bootcamp de Data Scientist en SoyHenry. El objetivo del proyecto es crear un modelo de recomendación de películas utilizando diversos análisis y técnicas de machine learning.
+Este es mi primer proyecto para el Bootcamp de Data Scientist en SoyHenry. El objetivo del proyecto es crear un (MVP) modelo de recomendación de películas utilizando diversos análisis y técnicas de machine learning.
 
 ## Contenido del Proyecto
 
