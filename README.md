@@ -66,13 +66,21 @@ Estas instrucciones te permitirán obtener una copia del proyecto en funcionamie
 # Herramientas y Tecnologías Utilizadas
 
 •	**Lenguajes y Librerías:**
+
 •	Python
+
 •	Pandas
+
 •	NumPy
+
 •	Scikit-learn
+
 •	Jupyter Notebook
+
 •	**Herramientas de EDA:**
+
 •	YData
+
 •	Data Wrangler (extensión de VSC)
 
 
