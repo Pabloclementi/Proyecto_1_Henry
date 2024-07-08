@@ -51,13 +51,13 @@ Estas instrucciones te permitirán obtener una copia del proyecto en funcionamie
 	python -m venv env
    ```
 
-#En mac 
+En mac 
 
 	```sh  
 	source env/bin/activate
 	```		   
    
-#En Windows usa 
+En Windows usa 
    
 	```sh
 	myenv\Scripts\activate
@@ -65,9 +65,10 @@ Estas instrucciones te permitirán obtener una copia del proyecto en funcionamie
 3. Instala las dependencias necesarias:
 
 	```python
-    `pip install -r requirements.txt`							
+   pip install -r requirements.txt						
 	```
-	
+
+
 
 # Herramientas y Tecnologías Utilizadas
 
