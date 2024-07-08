@@ -1,21 +1,20 @@
 # Proyecto 1 - Henry
+Descripción
 
-    Descripción
-
-    Este es mi primer proyecto para el Bootcamp de Data Scientist en SoyHenry. El objetivo del proyecto es crear un modelo de recomendación de películas utilizando diversos análisis y técnicas de machine learning.
+Este es mi primer proyecto para el Bootcamp de Data Scientist en SoyHenry. El objetivo del proyecto es crear un modelo de recomendación de películas utilizando diversos análisis y técnicas de machine learning.
 
 # Contenido del Proyecto
 
-	1.	Exploratory Data Analysis (EDA): Análisis inicial de los datos para entender las relaciones entre variables, detectar outliers y encontrar patrones interesantes.
-	2.	Preparación de Datos: Limpieza y transformación de datos para adecuarlos al modelo de recomendación.
-	3.	Modelo de Recomendación: Implementación de un sistema de recomendación de películas basado en características como género, título y overview.
+1.	Exploratory Data Analysis (EDA): Análisis inicial de los datos para entender las relaciones entre variables, detectar outliers y encontrar patrones interesantes.
+2.	Preparación de Datos: Limpieza y transformación de datos para adecuarlos al modelo de recomendación.
+3.	Modelo de Recomendación: Implementación de un sistema de recomendación de películas basado en características como género, título y overview.
 
 # Estructura del Repositorio
 
-	•	data/: Contiene los archivos de datos utilizados en el proyecto.
-	•	notebooks/: Notebooks de Jupyter utilizados para el análisis y desarrollo del proyecto.
-	•	main.py: Código principal del modelo.
-	•	README.md: Este archivo, con la descripción del proyecto.
+•	data/: Contiene los archivos de datos utilizados en el proyecto.
+•	notebooks/: Notebooks de Jupyter utilizados para el análisis y desarrollo del proyecto.
+•	main.py: Código principal del modelo.
+•	README.md: Este archivo, con la descripción del proyecto.
 ### Datos
 
 La carpeta `data_original` no está incluida en este repositorio debido a su tamaño. Puedes descargarla desde el siguiente enlace:
@@ -28,12 +27,14 @@ Una vez descargada, coloca los archivos dentro de la carpeta data
 
 _Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo academico y pruebas._
 
-_   1.	Clona este repositorio:
+ 1.	Clona este repositorio:
     `git clone https://github.com/Pabloclementi/Proyecto_1_Henry.git` 
-    2. Crea y activa un entorno virtual (opcional pero recomendado):
+    
+ 2. Crea y activa un entorno virtual (opcional pero recomendado):
     `python -m venv env`
     `source env/bin/activate`  # En Windows usa `env\Scripts\activate`
-    3. Instala las dependencias necesarias:
+    
+3. Instala las dependencias necesarias:
     `pip install -r requirements.txt`
 
 # Herramientas y Tecnologías Utilizadas
