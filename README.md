@@ -1,15 +1,19 @@
 # Proyecto 1 - Henry
-Descripción
+
+## Descripción
 
 Este es mi primer proyecto para el Bootcamp de Data Scientist en SoyHenry. El objetivo del proyecto es crear un modelo de recomendación de películas utilizando diversos análisis y técnicas de machine learning.
 
-# Contenido del Proyecto
+## Contenido del Proyecto
 
 1.	Exploratory Data Analysis (EDA): Análisis inicial de los datos para entender las relaciones entre variables, detectar outliers y encontrar patrones interesantes.
+Aqui se detectaron varios outliers en variables numericas, como runtime y en return, pero se mantuvieron ya que el modelo de recomendación solo se vasa en variables categoricas como genero, titulo, y descripción.
+Se observo que la columna vote_average es la que manejaba una distribución mas uniforme y no se encontraba tan sesgada.
+En el archivo EDA.html , en el directorio data se puede ver un paneo general del analisis.
 2.	Preparación de Datos: Limpieza y transformación de datos para adecuarlos al modelo de recomendación.
 3.	Modelo de Recomendación: Implementación de un sistema de recomendación de películas basado en características como género, título y overview.
 
-# Estructura del Repositorio
+## Estructura del Repositorio
 
 •	data/: Contiene los archivos de datos utilizados en el proyecto.
 •	notebooks/: Notebooks de Jupyter utilizados para el análisis y desarrollo del proyecto.
