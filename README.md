@@ -47,7 +47,8 @@ Estas instrucciones te permitirán obtener una copia del proyecto en funcionamie
 
 2. Crea y activa un entorno virtual (opcional pero recomendado):
 
-   ```python -m venv env
+   ```sh
+   python -m venv env
    ```
 
 
