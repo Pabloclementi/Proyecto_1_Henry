@@ -50,9 +50,14 @@ Estas instrucciones te permitirán obtener una copia del proyecto en funcionamie
    ```sh
    python -m venv env
    ```
+3. Activa tu entorno virtual 
+
+   ```sh
+   source env/bin/activate
+   ``` 
 
 
-3.	Instala las dependencias necesarias::
+4.	Instala las dependencias necesarias::
    ```python
 	pip install -r requirements.txt
    ```
