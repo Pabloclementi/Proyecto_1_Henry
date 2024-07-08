@@ -8,7 +8,7 @@ from typing import List
 
 #Cargamos los datasets en variables con el metodo de pandas pd.read_csv()
 movies_df = pd.read_csv('data/moviesfinal.csv')
-modelo_df = pd.read_csv('data/modelofinal2.csv')
+modelo_df = pd.read_csv('data/top_5000_movies.csv')
 
 # Vectorización utilizando TF-IDF con stop words en None , previamente hecho en el EDA
 vectorizer = TfidfVectorizer(stop_words=None)
